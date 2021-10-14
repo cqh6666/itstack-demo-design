@@ -1,5 +1,8 @@
 package org.itstack.demo.design;
 
+/**
+ *  用户中奖后返回的值
+ */
 public class AwardRes {
 
     private String code; // 编码

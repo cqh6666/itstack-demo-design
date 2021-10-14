@@ -2,6 +2,9 @@ package org.itstack.demo.design;
 
 import java.util.Map;
 
+/**
+ * 用户中奖时的请求
+ */
 public class AwardReq {
 
     private String uId;                 // 用户唯一ID

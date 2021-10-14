@@ -1,5 +1,8 @@
 package org.itstack.demo.design.coupon;
 
+/**
+ * 优惠卷
+ */
 public class CouponResult {
 
     private String code; // 编码

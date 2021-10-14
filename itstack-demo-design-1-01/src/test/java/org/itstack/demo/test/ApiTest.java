@@ -17,6 +17,7 @@ public class ApiTest {
     @Test
     public void test_awardToUser() {
 
+        // 接口
         PrizeController prizeController = new PrizeController();
 
         System.out.println("\r\n模拟发放优惠券测试\r\n");
@@ -28,7 +29,7 @@ public class ApiTest {
         req01.setBizId("791098764902132");
         AwardRes awardRes01 = prizeController.awardToUser(req01);
 
-        logger.info("请求参数：{}", JSON.toJSON(req01));
+        logger.warn("请求参数：{}", JSON.toJSON(req01));
         logger.info("测试结果：{}", JSON.toJSON(awardRes01));
 
         System.out.println("\r\n模拟方法实物商品\r\n");
@@ -45,7 +46,7 @@ public class ApiTest {
         }});
 
         AwardRes awardRes02 = prizeController.awardToUser(req02);
-        logger.info("请求参数：{}", JSON.toJSON(req02));
+        logger.warn("请求参数：{}", JSON.toJSON(req02));
         logger.info("测试结果：{}", JSON.toJSON(awardRes02));
 
         System.out.println("\r\n第三方兑换卡(爱奇艺)\r\n");
@@ -55,7 +56,7 @@ public class ApiTest {
         req03.setAwardNumber("AQY1xjkUodl8LO975GdfrYUio");
 
         AwardRes awardRes03 = prizeController.awardToUser(req03);
-        logger.info("请求参数：{}", JSON.toJSON(req03));
+        logger.warn("请求参数：{}", JSON.toJSON(req03));
         logger.info("测试结果：{}", JSON.toJSON(awardRes03));
 
     }

@@ -14,9 +14,13 @@ import org.slf4j.LoggerFactory;
  */
 public class PrizeController {
 
+    /**
+     * 日志记录
+     */
     private Logger logger = LoggerFactory.getLogger(PrizeController.class);
 
     public AwardRes awardToUser(AwardReq req) {
+        // 转成String输出
         String reqJson = JSON.toJSONString(req);
         AwardRes awardRes = null;
         try {
@@ -24,6 +28,7 @@ public class PrizeController {
             // 按照不同类型方法商品[1优惠券、2实物商品、3第三方兑换卡(爱奇艺)]
             if (req.getAwardType() == 1) {
                 CouponService couponService = new CouponService();
+                // 发送奖品，同时反馈信息
                 CouponResult couponResult = couponService.sendCoupon(req.getuId(), req.getAwardNumber(), req.getBizId());
                 if ("0000".equals(couponResult.getCode())) {
                     awardRes = new AwardRes("0000", "发放成功");
@@ -32,6 +37,7 @@ public class PrizeController {
                 }
             } else if (req.getAwardType() == 2) {
                 GoodsService goodsService = new GoodsService();
+                // 当是实物商品时，需要输入用户地址等信息才能领取
                 DeliverReq deliverReq = new DeliverReq();
                 deliverReq.setUserName(queryUserName(req.getuId()));
                 deliverReq.setUserPhone(queryUserPhoneNumber(req.getuId()));

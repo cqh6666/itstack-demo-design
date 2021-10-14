@@ -2,6 +2,7 @@ package org.itstack.demo.design.card;
 
 /**
  * 模拟爱奇艺会员卡服务
+ * @author cqh
  */
 public class IQiYiCardService {
 

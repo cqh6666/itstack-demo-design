@@ -1,5 +1,8 @@
 package org.itstack.demo.design.goods;
 
+/**
+ * 实物商品的领取信息
+ */
 public class DeliverReq {
 
     private String userName;              // 用户姓名
