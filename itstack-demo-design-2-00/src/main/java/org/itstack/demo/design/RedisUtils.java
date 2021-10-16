@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 单机服务Redis
+ */
 public class RedisUtils {
 
     private Logger logger = LoggerFactory.getLogger(RedisUtils.class);
