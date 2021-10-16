@@ -8,9 +8,13 @@ import org.itstack.demo.design.floor.ShengXiangFloor;
 import org.itstack.demo.design.tile.DongPengTile;
 import org.itstack.demo.design.tile.MarcoPoloTile;
 
+/**
+ * 构建方案，只需要赋予面积
+ */
 public class Builder {
 
     public IMenu levelOne(Double area) {
+        // 因为是返回自己，所以可以链式编程
         return new DecorationPackageMenu(area, "豪华欧式")
                 .appendCeiling(new LevelTwoCeiling())    // 吊顶，二级顶
                 .appendCoat(new DuluxCoat())             // 涂料，多乐士

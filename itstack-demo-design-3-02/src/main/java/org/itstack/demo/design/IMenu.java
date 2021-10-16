@@ -1,5 +1,8 @@
 package org.itstack.demo.design;
 
+/**
+ * 各种物料
+ */
 public interface IMenu {
 
     /**
