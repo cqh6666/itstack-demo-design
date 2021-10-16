@@ -7,14 +7,24 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
+/**
+ * 实现Cloneable接口
+ */
 public class QuestionBank implements Cloneable {
 
-    private String candidate; // 考生
-    private String number;    // 考号
+    // 考生
+    private String candidate;
+    // 考号
+    private String number;
 
     private ArrayList<ChoiceQuestion> choiceQuestionList = new ArrayList<ChoiceQuestion>();
     private ArrayList<AnswerQuestion> answerQuestionList = new ArrayList<AnswerQuestion>();
 
+    /**
+     * 链式函数，可以返回自己
+     * @param choiceQuestion 选择题
+     * @return
+     */
     public QuestionBank append(ChoiceQuestion choiceQuestion) {
         choiceQuestionList.add(choiceQuestion);
         return this;
@@ -27,7 +37,9 @@ public class QuestionBank implements Cloneable {
 
     @Override
     public Object clone() throws CloneNotSupportedException {
+        // 克隆自己
         QuestionBank questionBank = (QuestionBank) super.clone();
+        // 深拷贝
         questionBank.choiceQuestionList = (ArrayList<ChoiceQuestion>) choiceQuestionList.clone();
         questionBank.answerQuestionList = (ArrayList<AnswerQuestion>) answerQuestionList.clone();
 

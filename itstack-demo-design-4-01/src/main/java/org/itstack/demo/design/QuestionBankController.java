@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author cqh
+ */
 public class QuestionBankController {
 
     public String createPaper(String candidate, String number) {
@@ -12,32 +15,32 @@ public class QuestionBankController {
         List<ChoiceQuestion> choiceQuestionList = new ArrayList<ChoiceQuestion>();
         List<AnswerQuestion> answerQuestionList = new ArrayList<AnswerQuestion>();
 
-        Map<String, String> map01 = new HashMap<String, String>();
+        Map<String, String> map01 = new HashMap<>();
         map01.put("A", "JAVA2 EE");
         map01.put("B", "JAVA2 Card");
         map01.put("C", "JAVA2 ME");
         map01.put("D", "JAVA2 HE");
         map01.put("E", "JAVA2 SE");
 
-        Map<String, String> map02 = new HashMap<String, String>();
+        Map<String, String> map02 = new HashMap<>();
         map02.put("A", "JAVA程序的main方法必须写在类里面");
         map02.put("B", "JAVA程序中可以有多个main方法");
         map02.put("C", "JAVA程序中类名必须与文件名一样");
         map02.put("D", "JAVA程序的main方法中如果只有一条语句，可以不用{}(大括号)括起来");
 
-        Map<String, String> map03 = new HashMap<String, String>();
+        Map<String, String> map03 = new HashMap<>();
         map03.put("A", "变量由字母、下划线、数字、$符号随意组成；");
         map03.put("B", "变量不能以数字作为开头；");
         map03.put("C", "A和a在java中是同一个变量；");
         map03.put("D", "不同类型的变量，可以起相同的名字；");
 
-        Map<String, String> map04 = new HashMap<String, String>();
+        Map<String, String> map04 = new HashMap<>();
         map04.put("A", "STRING");
         map04.put("B", "x3x;");
         map04.put("C", "void");
         map04.put("D", "de$f");
 
-        Map<String, String> map05 = new HashMap<String, String>();
+        Map<String, String> map05 = new HashMap<>();
         map05.put("A", "31");
         map05.put("B", "0");
         map05.put("C", "1");
@@ -64,7 +67,6 @@ public class QuestionBankController {
             Map<String, String> option = choiceQuestionList.get(idx).getOption();
             for (String key : option.keySet()) {
                 detail.append(key).append("：").append(option.get(key)).append("\r\n");
-                ;
             }
             detail.append("答案：").append(choiceQuestionList.get(idx).getKey()).append("\r\n\n");
         }
