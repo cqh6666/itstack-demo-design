@@ -10,7 +10,6 @@ public class ZfbPay extends Pay {
         super(payMode);
     }
 
-    @Override
     public String transfer(String uId, String tradeId, BigDecimal amount) {
         logger.info("模拟支付宝渠道支付划账开始。uId：{} tradeId：{} amount：{}", uId, tradeId, amount);
         boolean security = payMode.security(uId);
