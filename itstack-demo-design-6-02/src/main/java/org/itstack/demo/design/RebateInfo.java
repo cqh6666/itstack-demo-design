@@ -2,6 +2,10 @@ package org.itstack.demo.design;
 
 import java.util.Date;
 
+
+/**
+ * 通用的MQ消息体
+ */
 public class RebateInfo {
 
     private String userId;  // 用户ID

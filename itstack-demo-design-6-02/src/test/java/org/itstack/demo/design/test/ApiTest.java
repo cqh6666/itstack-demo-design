@@ -31,7 +31,8 @@ public class ApiTest {
         create_account.setAccountDate(parse);
         create_account.setDesc("在校开户");
 
-        HashMap<String, String> link01 = new HashMap<String, String>();
+        HashMap<String, String> link01 = new HashMap<>();
+        // 适配属性名 member -> userId , accountDate -> bizTime
         link01.put("userId", "number");
         link01.put("bizId", "number");
         link01.put("bizTime", "accountDate");
