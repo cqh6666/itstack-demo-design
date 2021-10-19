@@ -10,6 +10,7 @@ public abstract class SsoDecorator implements HandlerInterceptor {
         this.handlerInterceptor = handlerInterceptor;
     }
 
+    @Override
     public boolean preHandle(String request, String response, Object handler) {
         return handlerInterceptor.preHandle(request, response, handler);
     }
