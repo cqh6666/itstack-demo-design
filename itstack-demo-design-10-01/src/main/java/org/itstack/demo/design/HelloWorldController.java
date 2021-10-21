@@ -11,7 +11,7 @@ public class HelloWorldController {
     public UserInfo queryUserInfo(@RequestParam String userId) {
 
         // 做白名单拦截
-        List<String> userList = new ArrayList<String>();
+        List<String> userList = new ArrayList<>();
         userList.add("1001");
         userList.add("aaaa");
         userList.add("ccc");

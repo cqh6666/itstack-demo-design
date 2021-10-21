@@ -3,10 +3,7 @@ package org.itstack.demo.design.web;
 import org.itstack.demo.design.domain.UserInfo;
 import org.itstack.demo.design.door.annotation.DoDoor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 公众号：bugstack虫洞栈 | 沉淀、分享、成长，让自己和他人都能有所收获！
@@ -28,7 +25,7 @@ public class HelloWorldController {
      * http://localhost:8080/api/queryUserInfo?userId=小团团
      */
     @DoDoor(key = "userId", returnJson = "{\"code\":\"1111\",\"info\":\"非白名单可访问用户拦截！\"}")
-    @RequestMapping(path = "/api/queryUserInfo", method = RequestMethod.GET)
+    @GetMapping("/api/queryUserInfo")
     public UserInfo queryUserInfo(@RequestParam String userId) {
         return new UserInfo("虫虫:" + userId, 19, "天津市南开区旮旯胡同100号");
     }
