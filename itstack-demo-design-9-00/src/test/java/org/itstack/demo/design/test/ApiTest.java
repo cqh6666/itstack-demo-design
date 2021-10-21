@@ -8,6 +8,7 @@ public class ApiTest {
     @Test
     public void test_sso() {
         SsoInterceptor ssoInterceptor = new SsoInterceptor();
+        // 模拟request请求，里面存放cookies
         String request = "1successhuahua";
         boolean success = ssoInterceptor.preHandle(request, "ewcdqwt40liuiu", "t");
         System.out.println("登录校验：" + request +(success ? " 放行" : " 拦截"));

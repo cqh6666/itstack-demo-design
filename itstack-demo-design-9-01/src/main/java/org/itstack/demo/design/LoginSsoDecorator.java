@@ -7,6 +7,7 @@ public class LoginSsoDecorator extends SsoInterceptor {
 
     private static Map<String, String> authMap = new ConcurrentHashMap<String, String>();
 
+    // 模拟数据库数据
     static {
         authMap.put("huahua", "queryUserInfo");
         authMap.put("doudou", "queryUserInfo");
@@ -20,7 +21,9 @@ public class LoginSsoDecorator extends SsoInterceptor {
         // 模拟校验
         boolean success = ticket.equals("success");
 
-        if (!success) return false;
+        if (!success) {
+            return false;
+        }
 
         String userId = request.substring(9);
         String method = authMap.get(userId);
